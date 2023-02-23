@@ -32,8 +32,8 @@ function Header() {
 
   return (
     <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
-      <header className="fixed top-0 mx-auto h-20 w-full bg-gray-800 px-20">
-        <nav className="m-auto flex h-full w-full max-w-7xl items-center justify-between p-5">
+      <header className="fixed top-0 mx-auto h-20 w-full bg-gray-800">
+        <nav className="m-auto flex h-full w-full max-w-7xl items-center justify-between px-20">
           <ul className="hidden items-center justify-between space-x-12 md:flex">
             {LINKS.map((link) => (
               <Link

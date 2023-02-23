@@ -1,4 +1,10 @@
-import { TwitterIcon, GithubIcon, LinkedinIcon } from 'components/Icons'
+import {
+  TwitterIcon,
+  GithubIcon,
+  LinkedinIcon,
+  LocationIcon
+} from 'components/Icons'
+import { MailIcon } from 'components/Icons/MailIcon'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 function Contact() {
@@ -13,7 +19,7 @@ function Contact() {
   })
   return (
     <section
-      className="grid grid-cols-1 justify-center gap-20 py-24 md:grid-cols-[1fr,1fr] md:gap-2"
+      className="grid grid-cols-1 justify-center gap-20 py-12 md:grid-cols-[1fr,1fr] md:gap-2 md:py-24"
       id="home"
     >
       <div className="order-2 flex flex-col items-center justify-center space-y-8 md:order-1 md:items-start">
@@ -23,6 +29,16 @@ function Contact() {
         <h4 className="text-4xl">
           {text} <Cursor />
         </h4>
+        <ul className="flex flex-col items-start justify-center space-y-8">
+          <li className="flex flex-row items-center justify-center space-x-4">
+            <LocationIcon />
+            <span> MS, Dourados, Brasil 🇧🇷 </span>
+          </li>
+          <li className="flex flex-row items-center justify-center space-x-4">
+            <MailIcon />
+            <span> brunoyoichi2@gmail.com </span>
+          </li>
+        </ul>
         <ul className="flex items-center justify-center space-x-8">
           <li className="group transition-all duration-200 ease-in-out hover:scale-125">
             <a href="#">
