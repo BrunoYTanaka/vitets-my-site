@@ -36,7 +36,7 @@ function AboutMe() {
       id="about-me"
     >
       <div className="order-2 flex flex-col items-center justify-center space-y-8 md:order-1 md:items-start">
-        <img src="/src/public/skills.png" alt="" />
+        <img src="/skills.png" alt="" />
       </div>
       <div className="order-1 flex flex-col items-center justify-center space-y-8 md:order-2 md:items-start md:justify-start">
         <h3 className="text-5xl font-bold leading-7">Sobre min</h3>
