@@ -1,72 +1,52 @@
-# React Tailwindcss Boilerplate build with Vite
+<!-- <p align="center">
+  <img src="https://user-images.githubusercontent.com/26466516/141659551-d7ba5630-7200-46fe-863b-87818dae970a.png" alt="Next.js TypeScript Starter">
+</p> -->
 
-This is a [ReactJS](https://reactjs.org) + [Vite](https://vitejs.dev) boilerplate to be used with [Tailwindcss](https://tailwindcss.com).
+<br />
 
-## What is inside?
+<div align="center"><strong>My personal website</strong></div>
 
-This project uses many tools like:
+## Features
 
-- [ReactJS](https://reactjs.org)
-- [Vite](https://vitejs.dev)
-- [TypeScript](https://www.typescriptlang.org)
-- [Jest](https://jestjs.io)
-- [Testing Library](https://testing-library.com)
-- [Tailwindcss](https://tailwindcss.com)
-- [Eslint](https://eslint.org)
-- [Prettier](https://prettier.io)
+- ⚡️ Vite.js
+- ⚛️ React 18
+- ⛑ TypeScript
+- 🖌️ Tailwindcss 3
+- 📏 ESLint — Find and fix problems in your code
+- 💖 Prettier — Code Formatter for consistent style
+- ⚙️ EditorConfig - Maintain consistent coding styles across editors and IDEs
+- 🗂 Path Mapping — Import components or images using the `/` prefix
 
-## Getting Started
 
-### Install
+### Development
 
-Create the project.
-
-```bash
-npx degit joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate my-app
-```
-
-Access the project directory.
+To start the project locally, run:
 
 ```bash
-cd my-app
+npm run dev or yarn dev
 ```
 
-Install dependencies.
+Open `http://localhost:5173` with your browser to see the result.
 
-```bash
-pnpm install
-```
+## Documentation
 
-Serve with hot reload at <http://localhost:5173>.
+### Requirements
 
-```bash
-pnpm run dev
-```
+- Node.js >= 12.22.0
 
-### Lint
+### Directory Structure
 
-```bash
-pnpm run lint
-```
+- [`public`](./public) — Static assets such as robots.txt, images, and favicon.<br>
+- [`src`](./src) — Application source code, including pages, components, styles.
 
-### Typecheck
+### Scripts
 
-```bash
-pnpm run typecheck
-```
-
-### Build
-
-```bash
-pnpm run build
-```
-
-### Test
-
-```bash
-pnpm run test
-```
+- `npm run dev` — Starts the application in development mode at `http://localhost:5173`.
+- `npm run build` — Creates an optimized production build of your application.
+- `npm run serve` — Starts the application in production mode.
+- `npm run lint` — Runs ESLint for all files in the `src` directory.
+- `npm run typecheck` — Runs typecheck for all files in the `src` directory.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
