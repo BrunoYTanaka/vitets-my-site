@@ -23,7 +23,7 @@ function Experiences() {
       title: 'E-deploy',
       duration: '2019 - 2021',
       description:
-        'Desenvolver frontend responsável por manutenção e desenvolvimento de vários sties como. Burger King, Natura, Pax Primavera, etc.'
+        'Desenvolver frontend responsável por manutenção e desenvolvimento de vários sites como. Burger King, Natura, Pax Primavera, etc.'
     }
   ]
 

@@ -1,6 +1,7 @@
 import { AboutMe } from 'components/Sections/AboutMe'
 import { Contact } from 'components/Sections/Contact'
 import { Experiences } from 'components/Sections/Experiences'
+import { Skills } from 'components/Sections/Skills'
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <Contact />
       <AboutMe />
       <Experiences />
+      <Skills />
     </div>
   )
 }
