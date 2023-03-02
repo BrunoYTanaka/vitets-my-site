@@ -26,7 +26,7 @@ function Contact() {
         <h3 className="rounded-t-2xl rounded-r-2xl bg-[#42a5f5] px-7 py-3 text-base font-bold">
           Olá, seja bem vindo
         </h3>
-        <h4 className="text-4xl">
+        <h4 className="min-h-[80px] text-center text-4xl md:text-left lg:min-h-0">
           {text} <Cursor />
         </h4>
         <ul className="flex flex-col items-start justify-center space-y-8">

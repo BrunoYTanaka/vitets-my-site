@@ -1,3 +1,4 @@
+import { radius, duration, delay, transition } from 'constants/motion'
 import { motion } from 'framer-motion'
 import { useCounter } from 'hooks/useCounter'
 
@@ -6,23 +7,13 @@ interface ProgressProps {
   percentage: number
 }
 
-function CircularProgress({ percentage, title }: ProgressProps) {
-  const duration = 1.5
-  const delay = 0.5
-  const radius = 50
-
+function CircularProgressBar({ percentage, title }: ProgressProps) {
   const nodeRef = useCounter({ delay, duration, to: percentage })
 
   const circumference = Math.ceil(2 * Math.PI * radius)
   const fillPercents = Math.abs(
     Math.ceil((circumference / 100) * (percentage - 100))
   )
-
-  const transition = {
-    duration: duration,
-    delay: delay,
-    ease: 'easeIn'
-  }
 
   const variants = {
     hidden: {
@@ -36,10 +27,16 @@ function CircularProgress({ percentage, title }: ProgressProps) {
   return (
     <div className="relative flex flex-col items-center justify-center space-y-4">
       <span
-        className="absolute top-[85px] text-base font-medium leading-snug"
+        className="absolute top-[62px] text-base font-medium leading-snug"
         ref={nodeRef}
       />
-      <svg viewBox="0 0 100 100" className="h-40 w-40 overflow-visible">
+      <svg viewBox="0 0 100 100" className="h-28 w-28 overflow-visible">
+        <circle
+          cx="50"
+          cy="50"
+          r={radius}
+          className="fill-none stroke-black stroke-[10px]"
+        />
         <circle
           cx="50"
           cy="50"
@@ -65,4 +62,4 @@ function CircularProgress({ percentage, title }: ProgressProps) {
   )
 }
 
-export { CircularProgress }
+export { CircularProgressBar }
