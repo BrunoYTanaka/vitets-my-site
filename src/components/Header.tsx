@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import cn from 'classnames'
 import { Link } from 'components/Link'
 import { CloseIcon, MenuIcon, SunIcon } from 'components/Icons'
 import * as Dialog from '@radix-ui/react-dialog'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useTheme } from 'hooks/useTheme'
 
 function Header() {
   const LINKS = [
@@ -28,11 +30,29 @@ function Header() {
     }
   ]
 
+  const { mode, changeTheme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
+
+  const handleChangeTheme = () => {
+    changeTheme(mode === 'dark' ? 'light' : 'dark')
+  }
 
   return (
     <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
-      <header className="fixed top-0 mx-auto h-20 w-full bg-gray-800">
+      <header
+        className={cn(
+          'sticky',
+          'top-0',
+          'h-20',
+          'w-full',
+          'z-40',
+          'flex-none',
+          'bg-primary',
+          'border-b',
+          'border-slate-900/20',
+          'dark:border-slate-50/[0.06]'
+        )}
+      >
         <nav className="m-auto flex h-full w-full max-w-7xl items-center justify-between px-20">
           <ul className="hidden items-center justify-between space-x-12 md:flex">
             {LINKS.map((link) => (
@@ -53,7 +73,7 @@ function Header() {
               <MenuIcon />
             </button>
           </Dialog.Trigger>
-          <button>
+          <button onClick={handleChangeTheme}>
             <SunIcon />
           </button>
         </nav>
