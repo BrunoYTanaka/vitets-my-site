@@ -10,7 +10,9 @@ interface CounterData {
 
 function useCounter({ from = 0, to = 100, duration, delay }: CounterData) {
   const nodeRef = useRef<HTMLSpanElement>(null)
-  const isInView = useInView(nodeRef)
+  const isInView = useInView(nodeRef, {
+    once: true
+  })
 
   useEffect(() => {
     const node = nodeRef.current
