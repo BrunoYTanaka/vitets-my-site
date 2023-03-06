@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import cn from 'classnames'
 import { Link } from 'components/Link'
-import { CloseIcon, MenuIcon, SunIcon } from 'components/Icons'
+import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from 'components/Icons'
 import * as Dialog from '@radix-ui/react-dialog'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTheme } from 'hooks/useTheme'
@@ -74,7 +74,7 @@ function Header() {
             </button>
           </Dialog.Trigger>
           <button onClick={handleChangeTheme}>
-            <SunIcon />
+            {mode === 'dark' ? <SunIcon /> : <MoonIcon />}
           </button>
         </nav>
       </header>
