@@ -23,7 +23,7 @@ function Contact() {
       id="home"
     >
       <div className="order-2 flex flex-col items-center justify-center space-y-8 md:order-1 md:items-start">
-        <h3 className="rounded-t-2xl rounded-r-2xl bg-[#42a5f5] px-7 py-3 text-base font-bold">
+        <h3 className="rounded-t-2xl rounded-r-2xl bg-blue-400 px-7 py-3 text-base font-bold">
           Olá, seja bem vindo
         </h3>
         <h4 className="min-h-[80px] text-center text-4xl md:text-left lg:min-h-0">
@@ -42,23 +42,23 @@ function Contact() {
         <ul className="flex items-center justify-center space-x-8">
           <li className="group transition-all duration-200 ease-in-out hover:scale-125">
             <a href="#">
-              <GithubIcon className="group-hover:fill-[#42a5f5]" />
+              <GithubIcon className="group-hover:fill-blue-400" />
             </a>
           </li>
           <li className="group transition-all duration-200 ease-in-out hover:scale-125">
             <a href="#">
-              <TwitterIcon className="group-hover:fill-[#42a5f5]" />
+              <TwitterIcon className="group-hover:fill-blue-400" />
             </a>
           </li>
           <li className="group transition-all duration-200 ease-in-out hover:scale-125">
             <a href="#">
-              <LinkedinIcon className="group-hover:fill-[#42a5f5]" />
+              <LinkedinIcon className="group-hover:fill-blue-400" />
             </a>
           </li>
         </ul>
       </div>
       <div className="order-1 flex items-center justify-center md:order-2">
-        <div className="h-60 w-60 overflow-hidden rounded-full border-[20px] border-solid border-[#212121] transition-all md:h-60 md:w-60 lg:h-80 lg:w-80">
+        <div className="h-60 w-60 overflow-hidden rounded-full border-[20px] border-solid border-gray-400 transition-all dark:border-gray-600 md:h-60 md:w-60 lg:h-80 lg:w-80">
           <img
             src="https://avatars.githubusercontent.com/u/37604496?v=4"
             alt="Bruno Y. Tanaka"

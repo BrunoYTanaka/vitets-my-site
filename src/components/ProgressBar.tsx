@@ -25,13 +25,13 @@ function ProgressBar({ title, percentage }: ProgressBar) {
         <span className="text-base font-medium leading-snug">{title}</span>
         <span className="text-base font-medium leading-snug" ref={nodeRef} />
       </div>
-      <div className="relative h-2 w-full rounded-xl bg-[#8c8c8c]">
+      <div className="bg-progress-empty relative h-2 w-full rounded-xl border-[1px] border-black">
         <motion.div
           variants={variants}
           initial="empty"
           viewport={{ once: true }}
           whileInView="fill"
-          className="absolute inset-0 rounded-xl bg-[#42a5f5]"
+          className="absolute inset-0 rounded-xl bg-blue-400"
           transition={transition}
         />
       </div>

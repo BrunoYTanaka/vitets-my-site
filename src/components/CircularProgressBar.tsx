@@ -41,13 +41,13 @@ function CircularProgressBar({ percentage, title }: ProgressProps) {
           cx="50"
           cy="50"
           r={radius}
-          className="fill-none stroke-[#8c8c8c] stroke-[8px]"
+          className="stroke-progress-empty fill-none stroke-[8px]"
         />
         <motion.circle
           cx="50"
           cy="50"
           r={radius}
-          className="fill-none stroke-[#42a5f5] stroke-[8px]"
+          className="fill-none stroke-blue-400 stroke-[8px]"
           strokeDashoffset={fillPercents}
           strokeDasharray={circumference}
           variants={variants}

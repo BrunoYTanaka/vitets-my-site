@@ -49,7 +49,7 @@ function AboutMe() {
           {TOOLS.map((tool) => (
             <li
               key={tool.id}
-              className="rounded-md border-2 border-solid border-[#42a5f5] px-2 py-1 font-light"
+              className="rounded-md border-2 border-solid border-blue-400 px-2 py-1 font-light"
             >
               {tool.name}
             </li>
