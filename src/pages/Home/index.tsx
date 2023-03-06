@@ -8,8 +8,8 @@ function Home() {
     <div className="mx-auto w-full max-w-7xl px-2 md:px-20">
       <Contact />
       <AboutMe />
-      <Experiences />
       <Skills />
+      <Experiences />
     </div>
   )
 }

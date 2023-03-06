@@ -52,7 +52,7 @@ function Skills() {
   return (
     <section
       className="grid grid-cols-1 justify-center gap-20 py-12 md:grid-cols-[1fr,1fr] md:gap-12 md:py-24"
-      id="about-me"
+      id="skills"
     >
       <div className="order-2 flex flex-col items-center justify-start space-y-8 md:order-1">
         <h4 className="text-center text-3xl font-bold leading-snug md:text-4xl">

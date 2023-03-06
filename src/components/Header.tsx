@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import cn from 'classnames'
 import { Link } from 'components/Link'
 import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from 'components/Icons'
@@ -7,32 +7,95 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useTheme } from 'hooks/useTheme'
 import { Button } from './Button'
 
-function Header() {
-  const LINKS = [
-    {
-      id: 0,
-      text: 'Início',
-      to: 'home'
-    },
-    {
-      id: 1,
-      text: 'Sobre',
-      to: 'about'
-    },
-    {
-      id: 2,
-      text: 'Habilidades',
-      to: 'skills'
-    },
-    {
-      id: 3,
-      text: 'Experiências',
-      to: 'experiences'
-    }
-  ]
+const LINKS = [
+  {
+    id: 0,
+    text: 'Início',
+    to: 'home'
+  },
+  {
+    id: 1,
+    text: 'Sobre',
+    to: 'about'
+  },
+  {
+    id: 2,
+    text: 'Habilidades',
+    to: 'skills'
+  },
+  {
+    id: 3,
+    text: 'Experiências',
+    to: 'experiences'
+  }
+]
 
+const getDimensions = (ele: HTMLElement) => {
+  const { height } = ele.getBoundingClientRect()
+
+  const offsetTop = ele.offsetTop
+  const offsetBottom = offsetTop + height
+
+  return {
+    height,
+    offsetTop,
+    offsetBottom
+  }
+}
+
+interface RefData {
+  current: HTMLElement
+  section: string
+}
+
+function Header() {
   const { mode, changeTheme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
+  const [visibleSection, setVisibleSection] = useState('home')
+  const [refs, setRefs] = useState<RefData[]>([])
+
+  useEffect(() => {
+    if (refs.length === 0) {
+      const elements = LINKS.map((link) => {
+        return {
+          current: document.getElementById(link.to) as HTMLElement,
+          section: link.to
+        }
+      })
+      setRefs(elements)
+    }
+  }, [refs])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 300
+
+      const selected = refs.find((ref) => {
+        const { offsetBottom, offsetTop } = getDimensions(ref.current)
+        return scrollPosition > offsetTop && scrollPosition < offsetBottom
+      })
+
+      if (selected && selected.section !== visibleSection) {
+        setVisibleSection(selected.section)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [refs, visibleSection])
+
+  const onClick = (to: string) => {
+    const section = document.getElementById(to)
+    console.log(section)
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      })
+    }
+  }
 
   const handleChangeTheme = () => {
     changeTheme(mode === 'dark' ? 'light' : 'dark')
@@ -59,11 +122,9 @@ function Header() {
             {LINKS.map((link) => (
               <Link
                 key={link.id}
-                to="/"
-                isActive={false}
-                onClick={() => {
-                  console.log('click')
-                }}
+                isActive={visibleSection === link.to}
+                to={link.to}
+                onClick={onClick}
               >
                 {link.text}
               </Link>
@@ -114,11 +175,9 @@ function Header() {
                     {LINKS.map((link) => (
                       <Link
                         key={link.id}
-                        to="/"
+                        to={link.to}
                         isActive={false}
-                        onClick={() => {
-                          console.log('click')
-                        }}
+                        onClick={onClick}
                       >
                         {link.text}
                       </Link>
