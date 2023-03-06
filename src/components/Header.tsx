@@ -5,6 +5,7 @@ import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from 'components/Icons'
 import * as Dialog from '@radix-ui/react-dialog'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTheme } from 'hooks/useTheme'
+import { Button } from './Button'
 
 function Header() {
   const LINKS = [
@@ -73,9 +74,17 @@ function Header() {
               <MenuIcon />
             </button>
           </Dialog.Trigger>
-          <button onClick={handleChangeTheme}>
+          <Button
+            onClick={handleChangeTheme}
+            aria-label={
+              mode === 'dark'
+                ? 'Alterar o tema para claro'
+                : 'Alterar o tema para escuro'
+            }
+            className="rounded-full p-3  hover:bg-gray-200 dark:hover:bg-gray-800"
+          >
             {mode === 'dark' ? <SunIcon /> : <MoonIcon />}
-          </button>
+          </Button>
         </nav>
       </header>
       <AnimatePresence>

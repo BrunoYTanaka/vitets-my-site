@@ -42,23 +42,23 @@ function Contact() {
         <ul className="flex items-center justify-center space-x-8">
           <li className="group transition-all duration-200 ease-in-out hover:scale-125">
             <a href="#">
-              <GithubIcon className="group-hover:fill-blue-400" />
+              <GithubIcon className="text-primary group-hover:fill-blue-400" />
             </a>
           </li>
           <li className="group transition-all duration-200 ease-in-out hover:scale-125">
             <a href="#">
-              <TwitterIcon className="group-hover:fill-blue-400" />
+              <TwitterIcon className="text-primary group-hover:fill-blue-400" />
             </a>
           </li>
           <li className="group transition-all duration-200 ease-in-out hover:scale-125">
             <a href="#">
-              <LinkedinIcon className="group-hover:fill-blue-400" />
+              <LinkedinIcon className="text-primary group-hover:fill-blue-400" />
             </a>
           </li>
         </ul>
       </div>
       <div className="order-1 flex items-center justify-center md:order-2">
-        <div className="h-60 w-60 overflow-hidden rounded-full border-[20px] border-solid border-gray-400 transition-all dark:border-gray-600 md:h-60 md:w-60 lg:h-80 lg:w-80">
+        <div className="h-60 w-60 overflow-hidden rounded-full border-[20px] border-solid border-gray-300 transition-all dark:border-gray-500 md:h-60 md:w-60 lg:h-80 lg:w-80">
           <img
             src="https://avatars.githubusercontent.com/u/37604496?v=4"
             alt="Bruno Y. Tanaka"
