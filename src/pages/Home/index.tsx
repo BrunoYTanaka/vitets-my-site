@@ -5,7 +5,7 @@ import { Skills } from 'components/Sections/Skills'
 
 function Home() {
   return (
-    <div className="mx-auto mt-20 w-full max-w-7xl px-2 md:px-20">
+    <div className="mx-auto w-full max-w-7xl px-2 md:px-20">
       <Contact />
       <AboutMe />
       <Experiences />

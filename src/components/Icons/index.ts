@@ -1,5 +1,6 @@
 export * from './MenuIcon'
 export * from './SunIcon'
+export * from './MoonIcon'
 export * from './CloseIcon'
 export * from './GithubIcon'
 export * from './TwitterIcon'
