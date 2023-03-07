@@ -1,4 +1,5 @@
 import { Card } from 'components/Card'
+import { Section } from 'components/Section'
 
 function Experiences() {
   const educations = [
@@ -28,7 +29,7 @@ function Experiences() {
   ]
 
   return (
-    <section
+    <Section
       className="grid grid-cols-1 justify-center gap-20 py-12 md:grid-cols-[1fr,1fr] md:gap-12 md:py-24"
       id="experiences"
     >
@@ -44,7 +45,7 @@ function Experiences() {
           <Card key={experience.id} {...experience} />
         ))}
       </div>
-    </section>
+    </Section>
   )
 }
 

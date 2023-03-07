@@ -6,6 +6,7 @@ import {
 } from 'components/Icons'
 import { MailIcon } from 'components/Icons/MailIcon'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
+import { Section } from 'components/Section'
 
 function Contact() {
   const [text] = useTypewriter({
@@ -17,8 +18,9 @@ function Contact() {
     loop: true,
     delaySpeed: 2000
   })
+
   return (
-    <section
+    <Section
       className="grid grid-cols-1 justify-center gap-20 py-12 md:grid-cols-[1fr,1fr] md:gap-2 md:py-24"
       id="home"
     >
@@ -58,14 +60,14 @@ function Contact() {
         </ul>
       </div>
       <div className="order-1 flex items-center justify-center md:order-2">
-        <div className="h-60 w-60 overflow-hidden rounded-full border-[20px] border-solid border-gray-300 transition-all dark:border-gray-500 md:h-60 md:w-60 lg:h-80 lg:w-80">
+        <div className="h-60 w-60 overflow-hidden rounded-full border-[20px] border-solid border-gray-300 transition-all dark:border-gray-600 md:h-60 md:w-60 lg:h-80 lg:w-80">
           <img
             src="https://avatars.githubusercontent.com/u/37604496?v=4"
             alt="Bruno Y. Tanaka"
           />
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
 

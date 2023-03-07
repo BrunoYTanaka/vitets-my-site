@@ -1,3 +1,5 @@
+import { Section } from 'components/Section'
+
 function AboutMe() {
   const TOOLS = [
     {
@@ -31,7 +33,7 @@ function AboutMe() {
   ]
 
   return (
-    <section
+    <Section
       className="grid grid-cols-1 justify-center gap-20 py-12 md:grid-cols-[1fr,1fr] md:gap-12 md:py-24"
       id="about"
     >
@@ -56,7 +58,7 @@ function AboutMe() {
           ))}
         </ul>
       </div>
-    </section>
+    </Section>
   )
 }
 

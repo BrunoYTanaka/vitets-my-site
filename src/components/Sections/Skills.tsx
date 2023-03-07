@@ -1,5 +1,6 @@
 import { CircularProgressBar } from 'components/CircularProgressBar'
 import ProgressBar from 'components/ProgressBar'
+import { Section } from 'components/Section'
 
 function Skills() {
   const technicalSkills = [
@@ -50,7 +51,7 @@ function Skills() {
   ]
 
   return (
-    <section
+    <Section
       className="grid grid-cols-1 justify-center gap-20 py-12 md:grid-cols-[1fr,1fr] md:gap-12 md:py-24"
       id="skills"
     >
@@ -82,7 +83,7 @@ function Skills() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
 
