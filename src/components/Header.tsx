@@ -87,6 +87,7 @@ function Header() {
   }, [refs, visibleSection])
 
   const onClick = (to: string) => {
+    setIsOpen(false)
     const section = document.getElementById(to)
     console.log(section)
     if (section) {
@@ -131,9 +132,13 @@ function Header() {
             ))}
           </ul>
           <Dialog.Trigger asChild>
-            <button className="block md:hidden" onClick={() => setIsOpen(true)}>
+            <Button
+              className="block md:hidden"
+              onClick={() => setIsOpen(true)}
+              aria-label="Abrir o menu lateral"
+            >
               <MenuIcon />
-            </button>
+            </Button>
           </Dialog.Trigger>
           <Button
             onClick={handleChangeTheme}
@@ -142,7 +147,6 @@ function Header() {
                 ? 'Alterar o tema para claro'
                 : 'Alterar o tema para escuro'
             }
-            className="rounded-full p-3  hover:bg-gray-200 dark:hover:bg-gray-800"
           >
             {mode === 'dark' ? <SunIcon /> : <MoonIcon />}
           </Button>
@@ -157,7 +161,7 @@ function Header() {
             />
             <Dialog.Content forceMount asChild>
               <motion.aside
-                className={`fixed inset-0 flex h-screen w-80 flex-col space-y-6 bg-gray-800 p-10 md:hidden`}
+                className="bg-primary fixed inset-0 flex h-screen w-80 flex-col space-y-6 p-10 md:hidden"
                 initial={{ x: '-100%' }}
                 exit={{ x: '-100%' }}
                 animate={{ x: 0 }}
@@ -165,9 +169,12 @@ function Header() {
               >
                 <div className="text-end">
                   <Dialog.Close asChild>
-                    <button onClick={() => setIsOpen(false)}>
+                    <Button
+                      onClick={() => setIsOpen(false)}
+                      aria-label="Fechar o menu lateral"
+                    >
                       <CloseIcon />
-                    </button>
+                    </Button>
                   </Dialog.Close>
                 </div>
                 <nav className="">
