@@ -1,6 +1,7 @@
 import { AboutMe } from 'components/Sections/AboutMe'
 import { Contact } from 'components/Sections/Contact'
 import { Experiences } from 'components/Sections/Experiences'
+import { Projects } from 'components/Sections/Projects'
 import { Skills } from 'components/Sections/Skills'
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
       <AboutMe />
       <Skills />
       <Experiences />
+      <Projects />
     </div>
   )
 }

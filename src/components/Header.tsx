@@ -115,7 +115,7 @@ function Header() {
           'bg-primary',
           'border-b',
           'border-slate-900/20',
-          'dark:border-slate-50/[0.06]'
+          'dark:border-slate-50/20'
         )}
       >
         <nav className="m-auto flex h-full w-full max-w-7xl items-center justify-between px-20">
