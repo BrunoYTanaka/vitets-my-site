@@ -79,4 +79,65 @@ p, h1, h2, h3, h4, h5, h6 {
   .section-title {
     @apply text-4xl font-bold leading-5
   }
+
+  .glow-effect {
+    --glow-line-thickness: 2px;
+    --glow-line-length: 20px;
+    --glow-blur-size: 5px;
+    --animation-speed: 1500ms;
+    /* do not change, used for calculations */
+    --container-offset: 100px;
+
+    position: relative;
+  }
+
+  .glow-container {
+    position: absolute;
+    max-width: none;
+    pointer-events: none;
+    inset: calc(var(--container-offset) / -2);
+    width: calc(100% + var(--container-offset));
+    height: calc(100% + var(--container-offset));
+    opacity: 0;
+  }
+
+  .glow-blur,
+  .glow-line {
+    fill: transparent;
+    width: calc(100% - var(--container-offset));
+    height: calc(100% - var(--container-offset));
+    x: calc(var(--container-offset) / 2);
+    y: calc(var(--container-offset) / 2);
+    /* rx: 0.325rem; */
+    stroke-dasharray: var(--glow-line-length) calc(50px - var(--glow-line-length));
+    stroke-width: 5px;
+    @apply dark:stroke-white stroke-gray-500
+  }
+
+  .glow-blur {
+    filter: blur(var(--glow-blur-size));
+    stroke-width: var(--glow-blur-size);
+    @apply dark:stroke-white stroke-gray-500
+  }
+
+  .glow-line {
+    stroke-width: var(--glow-line-thickness);
+    @apply dark:stroke-white stroke-gray-500
+  }
+
+  .glow-effect:is(:hover, :focus) :is(.glow-line, .glow-blur) {
+    stroke-dashoffset: -80px;
+    /* transition: stroke-dashoffset var(--animation-speed) ease-in; */
+    animation: glow var(--animation-speed) linear infinite;
+  }
+
+  .glow-effect:is(:hover, :focus) .glow-container {
+    opacity: 1;
+  }
+
+}
+
+@keyframes glow {
+  from { stroke-dashoffset: initial }
+  to { stroke-dashoffset: -100px }
 }
