@@ -34,7 +34,8 @@ function ProjectCard({
         'shadow-2xl',
         'shadow-black',
         'cursor-pointer',
-        'glow-effect'
+        'glow-effect',
+        'min-h-[240px]'
       )}
       onClick={handleClickCard}
     >

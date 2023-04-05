@@ -27,6 +27,11 @@ const LINKS = [
     id: 3,
     text: 'Experiências',
     to: 'experiences'
+  },
+  {
+    id: 4,
+    text: 'Projetos',
+    to: 'projects'
   }
 ]
 

@@ -12,7 +12,7 @@ function GlowEffect() {
   }, [])
 
   return (
-    <svg className="glow-container">
+    <svg className="glow-container hidden md:block">
       <rect
         rx={rx}
         pathLength={100}
