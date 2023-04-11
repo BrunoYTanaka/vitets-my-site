@@ -1,5 +1,6 @@
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { radius, duration, delay, transition } from 'constants/motion'
-import { motion } from 'framer-motion'
 import { useCounter } from 'hooks/useCounter'
 
 interface ProgressProps {
@@ -9,20 +10,19 @@ interface ProgressProps {
 
 function CircularProgressBar({ percentage, title }: ProgressProps) {
   const nodeRef = useCounter({ delay, duration, to: percentage })
-
-  const circumference = Math.ceil(2 * Math.PI * radius)
-  const fillPercents = Math.abs(
-    Math.ceil((circumference / 100) * (percentage - 100))
-  )
+  const svgRef = useRef<SVGSVGElement>(null)
+  const isSvgInView = useInView(svgRef)
 
   const variants = {
     hidden: {
-      strokeDashoffset: circumference
+      pathLength: 0
     },
     show: {
-      strokeDashoffset: fillPercents
+      pathLength: percentage / 100
     }
   }
+
+  console.log(isSvgInView)
 
   return (
     <div className="relative flex flex-col items-center justify-center space-y-4">
@@ -30,7 +30,12 @@ function CircularProgressBar({ percentage, title }: ProgressProps) {
         className="absolute top-[62px] text-base font-medium leading-snug"
         ref={nodeRef}
       />
-      <svg viewBox="0 0 100 100" className="h-28 w-28 overflow-visible">
+
+      <svg
+        viewBox="0 0 100 100"
+        className="h-28 w-28 overflow-visible"
+        ref={svgRef}
+      >
         <circle
           cx="50"
           cy="50"
@@ -48,12 +53,9 @@ function CircularProgressBar({ percentage, title }: ProgressProps) {
           cy="50"
           r={radius}
           className="fill-none stroke-blue-400 stroke-[8px]"
-          strokeDashoffset={fillPercents}
-          strokeDasharray={circumference}
           variants={variants}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
+          animate={isSvgInView && 'show'}
           transition={transition}
         />
       </svg>

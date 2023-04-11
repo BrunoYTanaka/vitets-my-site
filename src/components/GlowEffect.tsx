@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 function GlowEffect() {
-  const [rx, setRx] = useState('')
+  const [rx, setRx] = useState('0')
 
   useEffect(() => {
     const glowEffect = document.querySelector('.glow-effect')
