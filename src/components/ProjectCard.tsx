@@ -32,7 +32,7 @@ function ProjectCard({
         'rounded-md',
         'p-8',
         'shadow-2xl',
-        'shadow-black',
+        'shadow-black/30',
         'cursor-pointer',
         'glow-effect',
         'min-h-[240px]'
