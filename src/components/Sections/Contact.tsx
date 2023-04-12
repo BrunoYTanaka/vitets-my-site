@@ -1,10 +1,4 @@
-import {
-  TwitterIcon,
-  GithubIcon,
-  LinkedinIcon,
-  LocationIcon,
-  MailIcon
-} from 'components/Icons'
+import { LocationIcon, MailIcon } from 'components/Icons'
 import { Icon } from '@iconify/react'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { Section } from 'components/Section'
