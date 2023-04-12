@@ -2,11 +2,48 @@ import {
   TwitterIcon,
   GithubIcon,
   LinkedinIcon,
-  LocationIcon
+  LocationIcon,
+  MailIcon
 } from 'components/Icons'
-import { MailIcon } from 'components/Icons/MailIcon'
+import { Icon } from '@iconify/react'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { Section } from 'components/Section'
+
+const socialMedia = [
+  {
+    id: 0,
+    icon: 'linkedin',
+    link: 'https://www.linkedin.com/in/bruno-y-tanaka/'
+  },
+  {
+    id: 1,
+    icon: 'github',
+    link: 'https://github.com/BrunoYTanaka'
+  },
+  {
+    id: 2,
+    icon: 'twitter',
+    link: 'https://twitter.com/BrunoYoichi'
+  }
+]
+
+interface LinkIconsProps {
+  to: string
+  icon: string
+}
+
+function LinkIcons({ to, icon }: LinkIconsProps) {
+  return (
+    <li className="group transition-all duration-200 ease-in-out hover:scale-125">
+      <a href={to} title={`Ir para o ${icon}`}>
+        <Icon
+          icon={`mdi:${icon}`}
+          className="text-primary h-5 w-5 group-hover:text-blue-400"
+        />
+      </a>
+    </li>
+  )
+}
 
 function Contact() {
   const [text] = useTypewriter({
@@ -42,25 +79,13 @@ function Contact() {
           </li>
         </ul>
         <ul className="flex items-center justify-center space-x-8">
-          <li className="group transition-all duration-200 ease-in-out hover:scale-125">
-            <a href="#">
-              <GithubIcon className="text-primary group-hover:fill-blue-400" />
-            </a>
-          </li>
-          <li className="group transition-all duration-200 ease-in-out hover:scale-125">
-            <a href="#">
-              <TwitterIcon className="text-primary group-hover:fill-blue-400" />
-            </a>
-          </li>
-          <li className="group transition-all duration-200 ease-in-out hover:scale-125">
-            <a href="#">
-              <LinkedinIcon className="text-primary group-hover:fill-blue-400" />
-            </a>
-          </li>
+          {socialMedia.map(({ icon, id, link }) => (
+            <LinkIcons key={id} to={link} icon={icon} />
+          ))}
         </ul>
       </div>
       <div className="order-1 flex items-center justify-center md:order-2">
-        <div className="h-60 w-60 overflow-hidden rounded-full border-[20px] border-solid border-gray-300 transition-all dark:border-gray-600 md:h-60 md:w-60 lg:h-80 lg:w-80">
+        <div className="avatar-border h-60 w-60 overflow-hidden rounded-full border-[20px] border-solid transition-all md:h-60 md:w-60 lg:h-80 lg:w-80">
           <img
             src="https://avatars.githubusercontent.com/u/37604496?v=4"
             alt="Bruno Y. Tanaka"
