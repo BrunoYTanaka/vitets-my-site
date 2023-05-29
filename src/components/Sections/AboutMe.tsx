@@ -1,4 +1,5 @@
 import { Section } from 'components/Section'
+import { motion } from 'framer-motion'
 
 function AboutMe() {
   const TOOLS = [
@@ -32,6 +33,16 @@ function AboutMe() {
     }
   ]
 
+  const list = {
+    hidden: { opacity: 1 },
+    show: { opacity: 1, transition: { staggerChildren: 0.2, delay: 3 } }
+  }
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, trasition: { delay: 1 } }
+  }
+
   return (
     <Section
       className="grid grid-cols-1 justify-center gap-20 py-12 md:grid-cols-[1fr,1fr] md:gap-12 md:py-24"
@@ -47,16 +58,22 @@ function AboutMe() {
           experiência em construção, customização e manutenção de sites. Tenho
           experiência com
         </p>
-        <ul className="flex flex-wrap items-center justify-center gap-4 md:items-start md:justify-start">
+        <motion.ul
+          className="flex flex-wrap items-center justify-center gap-4 md:items-start md:justify-start"
+          variants={list}
+          initial="hidden"
+          animate="show"
+        >
           {TOOLS.map((tool) => (
-            <li
+            <motion.li
+              variants={item}
               key={tool.id}
               className="rounded-md border-2 border-solid border-blue-400 px-2 py-1 font-light"
             >
               {tool.name}
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </div>
     </Section>
   )

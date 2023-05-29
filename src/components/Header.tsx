@@ -152,6 +152,11 @@ function Header() {
                 ? 'Alterar o tema para claro'
                 : 'Alterar o tema para escuro'
             }
+            title={
+              mode === 'dark'
+                ? 'Alterar o tema para claro'
+                : 'Alterar o tema para escuro'
+            }
           >
             {mode === 'dark' ? <SunIcon /> : <MoonIcon />}
           </Button>

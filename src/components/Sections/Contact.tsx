@@ -79,10 +79,11 @@ function Contact() {
         </ul>
       </div>
       <div className="order-1 flex items-center justify-center md:order-2">
-        <div className="avatar-border h-60 w-60 overflow-hidden rounded-full border-[20px] border-solid transition-all md:h-60 md:w-60 lg:h-80 lg:w-80">
+        <div className="avatar-border relative h-60 w-60 overflow-hidden rounded-2xl border-r-8 border-b-8 border-l-2 border-t-2 border-solid p-5 transition-all md:h-60 md:w-60 lg:h-80 lg:w-80">
           <img
             src="https://avatars.githubusercontent.com/u/37604496?v=4"
             alt="Bruno Y. Tanaka"
+            className="rounded-xl"
           />
         </div>
       </div>
