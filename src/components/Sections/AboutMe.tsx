@@ -40,7 +40,7 @@ function AboutMe() {
 
   const item = {
     hidden: { opacity: 0 },
-    show: { opacity: 1, trasition: { delay: 1 } }
+    show: { opacity: 1 }
   }
 
   return (
