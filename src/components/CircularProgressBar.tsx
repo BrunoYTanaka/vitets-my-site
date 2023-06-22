@@ -22,8 +22,6 @@ function CircularProgressBar({ percentage, title }: ProgressProps) {
     }
   }
 
-  console.log(isSvgInView)
-
   return (
     <div className="relative flex flex-col items-center justify-center space-y-4">
       <span

@@ -94,7 +94,7 @@ function Header() {
   const onClick = (to: string) => {
     setIsOpen(false)
     const section = document.getElementById(to)
-    console.log(section)
+
     if (section) {
       section.scrollIntoView({
         behavior: 'smooth',
