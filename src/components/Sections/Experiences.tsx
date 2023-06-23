@@ -1,6 +1,8 @@
+import { useRef } from 'react'
 import { Card } from 'components/Card'
 import { Section } from 'components/Section'
 import cn from 'classnames'
+import { motion, useScroll } from 'framer-motion'
 
 function Experiences() {
   const experiences = [
@@ -26,16 +28,23 @@ function Experiences() {
     }
   ]
 
+  const timelineRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ['start end', 'center start']
+  })
+
   return (
     <Section className="flex flex-col items-center py-12" id="experiences">
       <h4 className="mb-12 text-4xl font-bold leading-5">Experiência</h4>
-      <div
-        className={cn(
-          'relative w-full block space-y-8',
-          'after:absolute after:inset-0 after:h-full after:w-2 after:rounded-lg after:bg-white after:content-[""]',
-          'after:left-4 md:after:left-[50%]'
-        )}
-      >
+      <div className={cn('relative w-full block space-y-8')} ref={timelineRef}>
+        <motion.div
+          style={{ scaleY: scrollYProgress }}
+          className={cn(
+            'absolute inset-0 h-full w-2 rounded-lg bg-white origin-top',
+            'left-4 md:left-[50%]'
+          )}
+        />
         {experiences.map((experience) => {
           const isCardOnLeft = experience.id % 2 === 0
           return (
