@@ -31,7 +31,7 @@ function Experiences() {
   const timelineRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: timelineRef,
-    offset: ['start end', 'center start']
+    offset: ['start end', 'center']
   })
 
   return (
@@ -41,7 +41,7 @@ function Experiences() {
         <motion.div
           style={{ scaleY: scrollYProgress }}
           className={cn(
-            'absolute inset-0 h-full w-2 rounded-lg bg-white origin-top',
+            'absolute inset-0 h-full w-2 rounded-lg bg-progress-empty origin-top',
             'left-4 md:left-[50%]'
           )}
         />
