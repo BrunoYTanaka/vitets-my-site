@@ -5,18 +5,17 @@ interface CardProps {
   title: string
   duration: string
   description: string
-  delay?: number
 }
 
 function Card({ isCardOnLeft, title, duration, description }: CardProps) {
   return (
     <div
       className={cn(
-        'bg-card relative max-w-lg space-y-4 rounded-md px-6 py-7 shadow-2xl shadow-black before:card-arrow',
+        'bg-card relative max-w-lg space-y-4 rounded-md px-6 py-7 shadow-2xl shadow-black',
+        'before:card-arrow before:card-arrow-right',
+        'ml-4 md:ml-0',
         {
-          'before:right-full': isCardOnLeft,
-          'before:rotate-180': !isCardOnLeft,
-          'before:left-full': !isCardOnLeft
+          'md:before:card-arrow-left': !isCardOnLeft
         }
       )}
     >

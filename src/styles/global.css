@@ -139,6 +139,14 @@ p, h1, h2, h3, h4, h5, h6 {
     @apply absolute border-[12px] border-l-0 border-transparent border-r-white dark:border-r-gray-800 top-4;
   }
 
+  .card-arrow-right {
+    @apply right-full;
+  }
+
+  .card-arrow-left {
+    @apply rotate-180 left-full;
+  }
+
 }
 
 @keyframes glow {

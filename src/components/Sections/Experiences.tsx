@@ -27,20 +27,22 @@ function Experiences() {
   ]
 
   return (
-    <Section
-      className="flex flex-col items-center justify-center py-12"
-      id="experiences"
-    >
+    <Section className="flex flex-col items-center py-12" id="experiences">
       <h4 className="mb-12 text-4xl font-bold leading-5">Experiência</h4>
-      <div className="relative flex flex-col justify-center gap-20 after:absolute after:left-[50%] after:h-full after:w-2 after:rounded-lg after:bg-white after:content-['']">
+      <div
+        className={cn(
+          'relative w-full block space-y-8',
+          'after:absolute after:inset-0 after:h-full after:w-2 after:rounded-lg after:bg-white after:content-[""]',
+          'after:left-4 md:after:left-[50%]'
+        )}
+      >
         {experiences.map((experience) => {
           const isCardOnLeft = experience.id % 2 === 0
           return (
             <div
               key={experience.id}
-              className={cn('relative', 'px-8', {
-                'left-[50%]': isCardOnLeft,
-                '-left-[48.5%]': !isCardOnLeft
+              className={cn('relative', 'md:w-[50%] w-full', 'px-8', 'left-0', {
+                'md:left-[50%]': isCardOnLeft
               })}
             >
               <Card {...experience} isCardOnLeft={isCardOnLeft} />
