@@ -11,20 +11,23 @@ function Experiences() {
       title: 'Agile Content',
       duration: '2021 - atual',
       description:
-        'Desenvolver fullstack responsável por manutenção e desenvolvimento de novas funcionalidades do site Claro tv+'
+        'Desenvolver fullstack responsável por manutenção e desenvolvimento de novas funcionalidades do site Claro tv+',
+      right: true
     },
     {
       id: 1,
-      title: 'Universidade Estadual de Mato Grosso do Sul (UEMS)',
-      duration: '2014 - 2018',
-      description: 'Bacharelado em ciência da computação'
-    },
-    {
-      id: 2,
       title: 'E-deploy',
       duration: '2019 - 2021',
       description:
-        'Desenvolver frontend responsável por manutenção e desenvolvimento de vários sites como. Burger King, Natura, Pax Primavera, etc.'
+        'Desenvolver frontend responsável por manutenção e desenvolvimento de vários sites como. Burger King, Natura, Pax Primavera, etc.',
+      right: true
+    },
+    {
+      id: 2,
+      title: 'Universidade Estadual de Mato Grosso do Sul (UEMS)',
+      duration: '2014 - 2018',
+      description: 'Bacharelado em ciência da computação',
+      right: false
     }
   ]
 
@@ -46,15 +49,15 @@ function Experiences() {
           )}
         />
         {experiences.map((experience) => {
-          const isCardOnLeft = experience.id % 2 === 0
+          const isCardOnRight = experience.right || false
           return (
             <div
               key={experience.id}
               className={cn('relative', 'md:w-[50%] w-full', 'px-8', 'left-0', {
-                'md:left-[50%]': isCardOnLeft
+                'md:left-[50%]': isCardOnRight
               })}
             >
-              <Card {...experience} isCardOnLeft={isCardOnLeft} />
+              <Card {...experience} isCardOnRight={isCardOnRight} />
             </div>
           )
         })}

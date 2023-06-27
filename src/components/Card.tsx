@@ -1,13 +1,14 @@
 import cn from 'classnames'
 
 interface CardProps {
-  isCardOnLeft: boolean
+  isCardOnRight: boolean
   title: string
   duration: string
   description: string
 }
 
-function Card({ isCardOnLeft, title, duration, description }: CardProps) {
+function Card({ isCardOnRight, title, duration, description }: CardProps) {
+  const isCardOnLeft = !isCardOnRight
   return (
     <div
       className={cn(
@@ -15,8 +16,8 @@ function Card({ isCardOnLeft, title, duration, description }: CardProps) {
         'ml-4 md:ml-0',
         'before:card-arrow after:card-indicator',
         {
-          'md:before:card-arrow-left': !isCardOnLeft,
-          'md:after:card-indicator-left': !isCardOnLeft
+          'md:before:card-arrow-right': isCardOnLeft,
+          'md:after:card-indicator-right': isCardOnLeft
         }
       )}
     >

@@ -139,7 +139,7 @@ p, h1, h2, h3, h4, h5, h6 {
     @apply absolute border-[12px] border-l-0 border-transparent border-r-white dark:border-r-gray-800 top-4 right-full;
   }
 
-  .card-arrow-left {
+  .card-arrow-right {
     @apply rotate-180 left-full;
   }
 
@@ -147,8 +147,8 @@ p, h1, h2, h3, h4, h5, h6 {
     @apply absolute w-6 h-6 bg-white inset-0 top-4 rounded-full -left-10 border-4 border-blue-400;
   }
 
-  .card-indicator-left {
-    @apply left-full ml-6
+  .card-indicator-right {
+    @apply left-full ml-6;
   }
 
 }
