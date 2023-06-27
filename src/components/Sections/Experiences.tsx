@@ -29,7 +29,7 @@ function Experiences() {
       description: 'Bacharelado em ciência da computação',
       right: false
     }
-  ]
+  ].reverse()
 
   const timelineRef = useRef(null)
   const { scrollYProgress } = useScroll({
