@@ -12,10 +12,11 @@ function Card({ isCardOnLeft, title, duration, description }: CardProps) {
     <div
       className={cn(
         'bg-card relative max-w-lg space-y-4 rounded-md px-6 py-7 shadow-2xl shadow-black',
-        'before:card-arrow before:card-arrow-right',
         'ml-4 md:ml-0',
+        'before:card-arrow after:card-indicator',
         {
-          'md:before:card-arrow-left': !isCardOnLeft
+          'md:before:card-arrow-left': !isCardOnLeft,
+          'md:after:card-indicator-left': !isCardOnLeft
         }
       )}
     >
